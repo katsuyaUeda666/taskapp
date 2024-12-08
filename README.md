@@ -1,6 +1,6 @@
 # practice3
 
-A new Flutter project.
+タスク管理アプリ.
 
 ## Getting Started
 
