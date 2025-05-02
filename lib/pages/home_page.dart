@@ -30,7 +30,7 @@ class HomePage extends HookConsumerWidget {
                       controller: controller,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: '🔍検索',
+                        hintText: '検索',
                       ),
                     )),
                     const SizedBox(width: 10),

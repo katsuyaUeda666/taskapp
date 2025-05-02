@@ -4,7 +4,7 @@ part 'task.freezed.dart';
 part 'task.g.dart';
 
 @freezed
-class TaskList with _$TaskList {
+abstract class TaskList with _$TaskList {
   factory TaskList({
     String? id,
     String? task,
