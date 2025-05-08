@@ -37,6 +37,7 @@ class TodoWidget extends ConsumerWidget {
           ),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(
@@ -64,23 +65,8 @@ class TodoWidget extends ConsumerWidget {
               ],
             ),
             Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SizedBox(
-                    height: 100,
-                    child: TextButton(
-                        onPressed: () {
-                          context.goNamed(
-                            'EditTodo',
-                            extra: {
-                              'id': task.id,
-                              'title': task.task,
-                              'detail': task.description,
-                            },
-                          );
-                        },
-                        child: Text('編集'))),
                 Row(
                   children: [
                     DeleteButton(
@@ -90,9 +76,16 @@ class TodoWidget extends ConsumerWidget {
                     ),
                     OutlinedButton(
                       onPressed: () {
-                        context.goNamed('EditTodo');
+                        context.goNamed(
+                          'EditTodo',
+                          extra: {
+                            'id': task.id,
+                            'title': task.task,
+                            'detail': task.description,
+                          },
+                        );
                       },
-                      child: Text('詳細'),
+                      child: Text('編集'),
                       style: OutlinedButton.styleFrom(
                         minimumSize: Size(50, 35), // ボタンのサイズ
                         shape: RoundedRectangleBorder(

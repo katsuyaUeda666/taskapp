@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,158 +10,31 @@ part of 'task.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-TaskList _$TaskListFromJson(Map<String, dynamic> json) {
-  return _TaskList.fromJson(json);
-}
 
 /// @nodoc
 mixin _$TaskList {
-  String? get id => throw _privateConstructorUsedError;
-  String? get task => throw _privateConstructorUsedError;
-  String? get description => throw _privateConstructorUsedError;
-  Status? get status => throw _privateConstructorUsedError;
-
-  /// Serializes this TaskList to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  String? get id;
+  String? get task;
+  String? get description;
+  Status? get status;
 
   /// Create a copy of TaskList
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $TaskListCopyWith<TaskList> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+      _$TaskListCopyWithImpl<TaskList>(this as TaskList, _$identity);
 
-/// @nodoc
-abstract class $TaskListCopyWith<$Res> {
-  factory $TaskListCopyWith(TaskList value, $Res Function(TaskList) then) =
-      _$TaskListCopyWithImpl<$Res, TaskList>;
-  @useResult
-  $Res call({String? id, String? task, String? description, Status? status});
-}
-
-/// @nodoc
-class _$TaskListCopyWithImpl<$Res, $Val extends TaskList>
-    implements $TaskListCopyWith<$Res> {
-  _$TaskListCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of TaskList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? task = freezed,
-    Object? description = freezed,
-    Object? status = freezed,
-  }) {
-    return _then(_value.copyWith(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      task: freezed == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$TaskListImplCopyWith<$Res>
-    implements $TaskListCopyWith<$Res> {
-  factory _$$TaskListImplCopyWith(
-          _$TaskListImpl value, $Res Function(_$TaskListImpl) then) =
-      __$$TaskListImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? id, String? task, String? description, Status? status});
-}
-
-/// @nodoc
-class __$$TaskListImplCopyWithImpl<$Res>
-    extends _$TaskListCopyWithImpl<$Res, _$TaskListImpl>
-    implements _$$TaskListImplCopyWith<$Res> {
-  __$$TaskListImplCopyWithImpl(
-      _$TaskListImpl _value, $Res Function(_$TaskListImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of TaskList
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? id = freezed,
-    Object? task = freezed,
-    Object? description = freezed,
-    Object? status = freezed,
-  }) {
-    return _then(_$TaskListImpl(
-      id: freezed == id
-          ? _value.id
-          : id // ignore: cast_nullable_to_non_nullable
-              as String?,
-      task: freezed == task
-          ? _value.task
-          : task // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      status: freezed == status
-          ? _value.status
-          : status // ignore: cast_nullable_to_non_nullable
-              as Status?,
-    ));
-  }
-}
-
-/// @nodoc
-@JsonSerializable()
-class _$TaskListImpl implements _TaskList {
-  _$TaskListImpl({this.id, this.task, this.description, this.status});
-
-  factory _$TaskListImpl.fromJson(Map<String, dynamic> json) =>
-      _$$TaskListImplFromJson(json);
-
-  @override
-  final String? id;
-  @override
-  final String? task;
-  @override
-  final String? description;
-  @override
-  final Status? status;
-
-  @override
-  String toString() {
-    return 'TaskList(id: $id, task: $task, description: $description, status: $status)';
-  }
+  /// Serializes this TaskList to a JSON map.
+  Map<String, dynamic> toJson();
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$TaskListImpl &&
+            other is TaskList &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.task, task) || other.task == task) &&
             (identical(other.description, description) ||
@@ -172,45 +46,157 @@ class _$TaskListImpl implements _TaskList {
   @override
   int get hashCode => Object.hash(runtimeType, id, task, description, status);
 
-  /// Create a copy of TaskList
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
-  @pragma('vm:prefer-inline')
-  _$$TaskListImplCopyWith<_$TaskListImpl> get copyWith =>
-      __$$TaskListImplCopyWithImpl<_$TaskListImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$TaskListImplToJson(
-      this,
-    );
+  String toString() {
+    return 'TaskList(id: $id, task: $task, description: $description, status: $status)';
   }
 }
 
-abstract class _TaskList implements TaskList {
-  factory _TaskList(
-      {final String? id,
-      final String? task,
-      final String? description,
-      final Status? status}) = _$TaskListImpl;
+/// @nodoc
+abstract mixin class $TaskListCopyWith<$Res> {
+  factory $TaskListCopyWith(TaskList value, $Res Function(TaskList) _then) =
+      _$TaskListCopyWithImpl;
+  @useResult
+  $Res call({String? id, String? task, String? description, Status? status});
+}
 
-  factory _TaskList.fromJson(Map<String, dynamic> json) =
-      _$TaskListImpl.fromJson;
+/// @nodoc
+class _$TaskListCopyWithImpl<$Res> implements $TaskListCopyWith<$Res> {
+  _$TaskListCopyWithImpl(this._self, this._then);
+
+  final TaskList _self;
+  final $Res Function(TaskList) _then;
+
+  /// Create a copy of TaskList
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? id = freezed,
+    Object? task = freezed,
+    Object? description = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_self.copyWith(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      task: freezed == task
+          ? _self.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status?,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _TaskList implements TaskList {
+  _TaskList({this.id, this.task, this.description, this.status});
+  factory _TaskList.fromJson(Map<String, dynamic> json) =>
+      _$TaskListFromJson(json);
 
   @override
-  String? get id;
+  final String? id;
   @override
-  String? get task;
+  final String? task;
   @override
-  String? get description;
+  final String? description;
   @override
-  Status? get status;
+  final Status? status;
 
   /// Create a copy of TaskList
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$TaskListImplCopyWith<_$TaskListImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  @pragma('vm:prefer-inline')
+  _$TaskListCopyWith<_TaskList> get copyWith =>
+      __$TaskListCopyWithImpl<_TaskList>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$TaskListToJson(
+      this,
+    );
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TaskList &&
+            (identical(other.id, id) || other.id == id) &&
+            (identical(other.task, task) || other.task == task) &&
+            (identical(other.description, description) ||
+                other.description == description) &&
+            (identical(other.status, status) || other.status == status));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode => Object.hash(runtimeType, id, task, description, status);
+
+  @override
+  String toString() {
+    return 'TaskList(id: $id, task: $task, description: $description, status: $status)';
+  }
 }
+
+/// @nodoc
+abstract mixin class _$TaskListCopyWith<$Res>
+    implements $TaskListCopyWith<$Res> {
+  factory _$TaskListCopyWith(_TaskList value, $Res Function(_TaskList) _then) =
+      __$TaskListCopyWithImpl;
+  @override
+  @useResult
+  $Res call({String? id, String? task, String? description, Status? status});
+}
+
+/// @nodoc
+class __$TaskListCopyWithImpl<$Res> implements _$TaskListCopyWith<$Res> {
+  __$TaskListCopyWithImpl(this._self, this._then);
+
+  final _TaskList _self;
+  final $Res Function(_TaskList) _then;
+
+  /// Create a copy of TaskList
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @pragma('vm:prefer-inline')
+  $Res call({
+    Object? id = freezed,
+    Object? task = freezed,
+    Object? description = freezed,
+    Object? status = freezed,
+  }) {
+    return _then(_TaskList(
+      id: freezed == id
+          ? _self.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String?,
+      task: freezed == task
+          ? _self.task
+          : task // ignore: cast_nullable_to_non_nullable
+              as String?,
+      description: freezed == description
+          ? _self.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String?,
+      status: freezed == status
+          ? _self.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as Status?,
+    ));
+  }
+}
+
+// dart format on

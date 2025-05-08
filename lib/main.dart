@@ -28,6 +28,7 @@ class MyApp extends ConsumerWidget {
               bodyColor: Colors.grey,
             ),
       ),
+      debugShowCheckedModeBanner: false,
       routeInformationProvider: router.routeInformationProvider,
       routeInformationParser: router.routeInformationParser,
       routerDelegate: router.routerDelegate,

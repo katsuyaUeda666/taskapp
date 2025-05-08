@@ -7,7 +7,13 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'task_name.g.dart';
 
 @riverpod
-TaskApiClient repository(RepositoryRef ref) => TaskApiClient();
+TaskApiClient repository(ref) => TaskApiClient();
+
+@riverpod
+Future<TaskList> task(ref, String id) async {
+  final list = await ref.watch(listNotifierProvider.future);
+  return list.firstWhere((task) => task.id == id);
+}
 
 @riverpod
 class ListNotifier extends _$ListNotifier {
@@ -38,24 +44,19 @@ class ListNotifier extends _$ListNotifier {
     state = AsyncValue.data([...state.asData!.value, newTask]);
   }
 
-  Future<void> updateState(String id, String newTitle, String newDetail) async {
-    final apiClient = ref.read(repositoryProvider);
+  Future<void> updateState(
+      String id, String newTitle, String newDetail, Status newStatus) async {
+    state = await AsyncValue.guard(() async {
+      final apiClient = ref.read(repositoryProvider);
+      await apiClient.updateTodo(id, newTitle, newDetail, newStatus);
 
-    // 現在の状態から該当のタスクを探し、ステータスを取得
-    final currentTask = state.asData!.value.firstWhere((task) => task.id == id);
-    final currentStatus = currentTask.status;
-
-    // サーバー上でタスクを更新 (既存のステータスを渡す)
-    await apiClient.updateTodo(id, newTitle, newDetail, currentStatus!);
-
-    // 状態を更新
-    state = AsyncValue.data([
-      for (final task in state.asData!.value)
-        if (task.id == id)
-          task.copyWith(task: newTitle, description: newDetail)
-        else
-          task,
-    ]);
+      return state.asData!.value.map((task) {
+        return task.id == id
+            ? task.copyWith(
+                task: newTitle, description: newDetail, status: newStatus)
+            : task;
+      }).toList();
+    });
   }
 
   Future<void> deleteState(String id) async {

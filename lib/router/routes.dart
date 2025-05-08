@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:practice3/model/status.dart';
 import 'package:practice3/pages/add_page.dart';
 import 'package:practice3/pages/edit_page.dart';
 import 'package:practice3/pages/home_page.dart';
@@ -60,9 +61,18 @@ final appRoutes = [
                   final id = extra?['id'] ?? 0;
                   final title = extra?['title'] ?? 'Default Title';
                   final detail = extra?['detail'] ?? 'Default Detail';
+                  final status = Status.values.firstWhere(
+                    (e) => e.name == state.pathParameters['status'],
+                    orElse: () => Status.todo, // 万が一ない場合はtodoをデフォルト
+                  );
                   return MaterialPage(
                     key: state.pageKey,
-                    child: EditTodo(id: id, title: title, detail: detail),
+                    child: EditTodo(
+                      id: id,
+                      title: title,
+                      detail: detail,
+                      status: status,
+                    ),
                   );
                 },
               )

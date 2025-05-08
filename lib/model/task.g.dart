@@ -6,16 +6,14 @@ part of 'task.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$TaskListImpl _$$TaskListImplFromJson(Map<String, dynamic> json) =>
-    _$TaskListImpl(
+_TaskList _$TaskListFromJson(Map<String, dynamic> json) => _TaskList(
       id: json['id'] as String?,
       task: json['task'] as String?,
       description: json['description'] as String?,
       status: $enumDecodeNullable(_$StatusEnumMap, json['status']),
     );
 
-Map<String, dynamic> _$$TaskListImplToJson(_$TaskListImpl instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$TaskListToJson(_TaskList instance) => <String, dynamic>{
       'id': instance.id,
       'task': instance.task,
       'description': instance.description,
